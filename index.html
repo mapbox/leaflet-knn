@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Leaflet Point in Polygon</title>
+        <link rel='stylesheet' type='text/css' href='' />
+        <meta http-equiv='content-type' content='text/html; charset=utf-8' />
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css" />
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.ie.css" />
+        <![endif]-->
+        <script src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"></script>
+        <style>
+        body { width: 500px; margin: 20px auto; font: normal 12px/20px sans-serif; }
+        #map { width: 500px; height: 300px; }
+        #me {
+            background: darkblue;
+            color:#fff;
+            border-radius:5px;
+            border-width:0;
+            padding:10px;
+            font-size:20px;
+            width: 100%;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>Leaflet KNN</h1>
+        <p>a simple 'plugin' for doing next nearest neighbor with
+            Leaflet vector layers.
+        <a href='https://github.com/tmcw/leaflet-pip'>fork, copy, download,
+            learn about it on GitHub</a>.</p>
+        <div id='map'></div>
+        <button id='me'>Find Me</button>
+        <script src='leaflet-knn.js'></script>
+        <script src='points.js'></script>
+        <script>
+var map = L.map('map').setView([37.8, -96], 4),
+    gjLayer = L.geoJson(testCities);
+
+L.tileLayer('http://a.tiles.mapbox.com/v3/tmcw.map-l1m85h7s/{z}/{x}/{y}.png')
+    .addTo(map);
+
+gjLayer.addTo(map);
+
+document.getElementById('me').onclick = function() {
+    navigator.geolocation.getCurrentPosition(function(pos) {
+        var res = leafletKnn(gjLayer).nearest(
+            [pos.coords.longitude, pos.coords.latitude], 1);
+        if (res.length) {
+            document.getElementById('me').innerHTML = 'Closest City to You is ' + res[0].layer.feature.properties.name;
+        } else {
+            document.getElementById('me').innerHTML = 'You aren\'t in America';
+        }
+    });
+};
+        </script>
+    </body>
+</html>
