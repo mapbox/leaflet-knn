@@ -22,15 +22,15 @@ With [browserify](https://github.com/substack/node-browserify)
 
 ## api
 
-### `leafletKnn(layer)`
+### `var index = leafletKnn(layer)`
 
 Generates a lookup function from an `L.geoJson` layer object.
 
 API is the same as the [sphere-knn](https://github.com/darkskyapp/sphere-knn) API
-for the lookup function, but with nice handling for `l.latlng`
+for the lookup function, but with nice handling for `l.latLng`
 
 ### `index.nearest(point: L.LatLng or [lon, lat], n, max_distance)`
 
 * point: L.LatLng or [lon, lat], index, [max points: int], [max distance: number])`
-* n: how many
+* n: the maximum number of points returned from the search
 * max_distance: maximum distance in meters
