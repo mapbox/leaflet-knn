@@ -12,7 +12,7 @@ var nearest = leafletKnn(gj).nearest(L.latLng(38, -78), 5);
 
 ## using it
 
-    wget https://raw.github.com/tmcw/leaflet-knn/master/leaflet-knn.min.js
+    wget https://raw.github.com/mapbox/leaflet-knn/master/leaflet-knn.min.js
 
 (or without the `.min.` if you want more debugging power)
 
