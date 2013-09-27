@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../node_modules/mocha/mocha.css" />
     <script src="support/leaflet.js"></script>
     <script src="support/points.js"></script>
+    <script src="support/squares.js"></script>
     <script src="../leaflet-knn.js"></script>
   </head>
   <body>
@@ -16,8 +17,7 @@
     <script>mocha.setup('bdd')</script>
     <script src="leaflet-knn.js"></script>
     <script>
-      mocha.run();
+      (window.mochaPhantomJS || window.mocha).run();
     </script>
   </body>
 </html>
-

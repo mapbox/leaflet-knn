@@ -31,6 +31,19 @@ for the lookup function, but with nice handling for `l.latLng`
 
 ### `index.nearest(point: L.LatLng or [lon, lat], n, max_distance)`
 
+Given a point, find the nearest points to it. If the index contains multi-point
+features, like lines, polygons, and so on, it returns _points in those features_
+and can return more than one point in each feature.
+
+* point: L.LatLng or [lon, lat], index, [max points: int], [max distance: number])`
+* n: the maximum number of points returned from the search
+* max_distance: maximum distance in meters
+
+### `index.nearestLayer(point: L.LatLng or [lon, lat], n, max_distance)`
+
+Like `nearest`, except multiple matches in the same multi-point feature are
+collapsed, so the array returned has one result per layer.
+
 * point: L.LatLng or [lon, lat], index, [max points: int], [max distance: number])`
 * n: the maximum number of points returned from the search
 * max_distance: maximum distance in meters

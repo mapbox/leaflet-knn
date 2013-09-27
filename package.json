@@ -4,7 +4,7 @@
   "description": "next nearest neighbors for leaflet",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -R spec"
   },
   "repository": "",
   "keywords": [
@@ -22,7 +22,8 @@
     "sphere-knn": "~1.2.1"
   },
   "devDependencies": {
-      "mocha": "~1.8",
-      "expect.js": "~0.2.0"
+    "mocha": "~1.8",
+    "expect.js": "~0.2.0",
+    "leaflet": "~0.6.4"
   }
 }
