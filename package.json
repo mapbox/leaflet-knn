@@ -1,29 +1,29 @@
 {
-  "name": "leaflet-knn",
-  "version": "0.1.0",
-  "description": "next nearest neighbors for leaflet",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha -R spec"
-  },
-  "repository": "",
-  "keywords": [
-    "maps",
-    "leaflet",
-    "plugin",
-    "next",
-    "nearest",
-    "neighbor"
-  ],
-  "author": "Tom MacWright <tom@macwright.org>",
-  "license": "BSD",
-  "readmeFilename": "README.md",
+  "license": "BSD-2-Clause", 
+  "name": "leaflet-knn", 
+  "repository": "", 
+  "author": "Tom MacWright <tom@macwright.org>", 
+  "version": "0.1.0", 
   "dependencies": {
     "sphere-knn": "~1.2.1"
-  },
+  }, 
+  "scripts": {
+    "test": "mocha -R spec"
+  }, 
+  "keywords": [
+    "maps", 
+    "leaflet", 
+    "plugin", 
+    "next", 
+    "nearest", 
+    "neighbor"
+  ], 
   "devDependencies": {
-    "mocha": "~1.8",
-    "expect.js": "~0.2.0",
-    "leaflet": "~0.6.4"
-  }
+    "leaflet": "~0.6.4", 
+    "expect.js": "~0.2.0", 
+    "mocha": "~1.8"
+  }, 
+  "main": "index.js", 
+  "readmeFilename": "README.md", 
+  "description": "next nearest neighbors for leaflet"
 }
