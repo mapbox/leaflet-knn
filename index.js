@@ -10,7 +10,7 @@ module.exports = function(layer) {
     layer.eachLayer(collectPoints);
 
     function collectPoints(l) {
-        points = points.concat(reformat(flat(l.feature.geometry.coordinates), l));
+        points.push(...reformat(flat(l.feature.geometry.coordinates), l));
     }
 
     var sknn = sphereKnn(points);
